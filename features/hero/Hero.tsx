@@ -53,13 +53,10 @@ export function Hero() {
 
       {/* HERO CONTENT */}
       <div className="relative z-10 max-w-[1240px] w-full mx-auto flex flex-col items-start text-left">
-        {/* EYEBROW BADGE */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8651A]/15 border border-[#E8651A]/35 backdrop-blur-md mb-5 animate-fadeIn shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-[#E8651A] animate-pulse" />
-          <span className="text-[11px] sm:text-[12px] font-semibold tracking-[0.22em] uppercase text-[#E8651A]">
-            NOVA CATEDRAL EM CATALÃO · GO
-          </span>
-        </div>
+        {/* EYEBROW */}
+        <span className="eyebrow-accent mb-5 animate-fadeIn">
+          NOVA CATEDRAL EM CATALÃO · GO
+        </span>
 
         {/* HEADLINE */}
         <h1 className="font-normal sm:font-medium text-[clamp(32px,4.5vw,62px)] leading-[1.12] tracking-[-0.01em] text-[#F3EFE6] max-w-[20ch] text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">

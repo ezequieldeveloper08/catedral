@@ -37,12 +37,9 @@ export function StatusBanner() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* LEFT: TEXT NOTICE */}
           <div className="lg:col-span-6 space-y-5 sm:space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8651A]/10 border border-[#E8651A]/30">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E8651A] animate-pulse" />
-              <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#E8651A]">
-                Status da Construção
-              </span>
-            </div>
+            <span className="eyebrow-accent block mb-2">
+              Status da Construção
+            </span>
 
             <h2 className="text-[clamp(24px,3.2vw,44px)] font-normal leading-[1.15] tracking-[-0.01em] text-[#F3EFE6]">
               A igreja permanece em <span className="font-semibold text-[#E8651A]">pleno funcionamento</span> durante as obras.

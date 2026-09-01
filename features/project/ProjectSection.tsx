@@ -3,7 +3,7 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Autoplay } from "swiper/modules"
 import type { Swiper as SwiperType } from "swiper"
 import { siteContent } from "@/config/site-content"
 import { SectionTitle } from "@/components/shared/SectionTitle"
@@ -14,7 +14,6 @@ import {
 } from "lucide-react"
 
 import "swiper/css"
-import "swiper/css/pagination"
 
 export function ProjectSection() {
   const { renders, pillars } = siteContent
@@ -70,7 +69,7 @@ export function ProjectSection() {
       <div className="mt-8 sm:mt-14 lg:mt-16 sm:px-12 lg:px-20">
         <div className="sm:max-w-[1240px] sm:mx-auto relative">
           <Swiper
-            modules={[Autoplay, Pagination]}
+            modules={[Autoplay]}
             autoplay={{ delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true }}
             loop
             speed={500}
@@ -91,10 +90,10 @@ export function ProjectSection() {
                   />
 
                   {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                  {/* Counter — top right — Instagram style */}
-                  <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm text-white text-[11px] font-semibold px-2.5 py-1 rounded-full tracking-wide">
+                  {/* Counter — top right */}
+                  <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[11px] font-semibold px-2.5 py-1 rounded-full tracking-wide border border-white/10">
                     {activeIndex + 1}/{renders.length}
                   </div>
 
@@ -102,22 +101,22 @@ export function ProjectSection() {
                   <button
                     type="button"
                     onClick={() => openLightbox(idx)}
-                    className="absolute top-3 left-3 p-2 bg-black/50 backdrop-blur-sm hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition-all duration-200 cursor-pointer z-10"
+                    className="absolute top-3 left-3 p-2 bg-black/60 backdrop-blur-md hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition-all duration-200 cursor-pointer z-10"
                     aria-label="Expandir"
                   >
                     <Maximize2 className="size-3.5" />
                   </button>
 
                   {/* Bottom info */}
-                  <div className="absolute bottom-0 inset-x-0 p-3 sm:p-8">
-                    <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#E8651A] block mb-0.5">
+                  <div className="absolute bottom-0 inset-x-0 p-4 sm:p-8 space-y-1">
+                    <span className="eyebrow-accent text-[10px] sm:text-[11px] block">
                       {render.badge}
                     </span>
-                    <h3 className="text-sm sm:text-2xl font-light text-white">
+                    <h3 className="text-base sm:text-2xl font-normal text-[#F3EFE6] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                       {render.title}
                     </h3>
                     {/* Description only on desktop */}
-                    <p className="hidden sm:block text-sm text-white/70 mt-1 max-w-xl">
+                    <p className="hidden sm:block text-xs sm:text-sm text-[#EAE5DC]/80 max-w-2xl leading-relaxed drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
                       {render.description}
                     </p>
                   </div>
@@ -126,8 +125,22 @@ export function ProjectSection() {
             ))}
           </Swiper>
 
-          {/* DOTS — Instagram style, centered below image */}
-          <div className="insta-dots flex justify-center items-center gap-1.5 mt-3" />
+          {/* CLEAN REACT PAGINATION INDICATORS */}
+          <div className="flex justify-center items-center gap-2 mt-4">
+            {renders.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={() => mainSwiper?.slideToLoop(idx)}
+                className={`transition-all duration-300 cursor-pointer rounded-full border-none outline-none ${
+                  idx === activeIndex
+                    ? "w-7 h-[3px] bg-[#E8651A]"
+                    : "w-2.5 h-[3px] bg-white/30 hover:bg-white/60"
+                }`}
+                aria-label={`Slide ${idx + 1}`}
+              />
+            ))}
+          </div>
 
           {/* Desktop arrow nav */}
           <button
@@ -164,36 +177,6 @@ export function ProjectSection() {
         </div>
       </div>
 
-      {/* SPECIFICATIONS (TEMP COMMENTED OUT) */}
-      {/*
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-12 lg:px-20 mt-12 sm:mt-20">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {pillars.map((pillar, index) => {
-            const Icon = specIcons[pillar.iconName] || CheckCircle2
-            return (
-              <div
-                key={index}
-                className="bg-[#1c1913] border border-white/10 p-5 sm:p-8 space-y-3 transition-colors hover:border-[#E8651A]/50"
-              >
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <Icon className="size-4 sm:size-5 text-[#E8651A] shrink-0" />
-                  <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.12em] sm:tracking-[0.16em] text-[#E8651A] leading-tight">
-                    {pillar.badge}
-                  </span>
-                </div>
-                <h4 className="text-xs sm:text-sm font-semibold uppercase tracking-[0.1em] sm:tracking-[0.12em] text-[#EAE5DC] leading-snug">
-                  {pillar.title}
-                </h4>
-                <p className="text-[11px] sm:text-xs font-light text-[rgba(234,229,220,0.65)] leading-relaxed">
-                  {pillar.description}
-                </p>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-      */}
-
       {/* ── LIGHTBOX ── */}
       {lightboxOpen && (
         <div className="fixed inset-0 z-50 bg-black/95 flex flex-col items-center justify-center" onClick={closeLightbox}>
@@ -208,9 +191,8 @@ export function ProjectSection() {
 
           <div className="relative w-full max-w-5xl px-12 sm:px-16" onClick={(e) => e.stopPropagation()}>
             <Swiper
-              modules={[Pagination]}
+              modules={[]}
               initialSlide={lightboxIndex}
-              pagination={{ el: ".lb-dots", clickable: true }}
               loop
               grabCursor
               onSwiper={setLightboxSwiper}
@@ -251,41 +233,32 @@ export function ProjectSection() {
           </div>
 
           <div className="w-full max-w-5xl px-4 pt-4 pb-2 text-center" onClick={(e) => e.stopPropagation()}>
-            <span className="text-[11px] font-semibold tracking-[0.2em] uppercase text-[#E8651A] block">
+            <span className="eyebrow-accent text-[11px] block justify-center">
               {renders[lightboxIndex]?.badge}
             </span>
-            <h3 className="text-base sm:text-xl font-light text-[#EAE5DC] mt-0.5">
+            <h3 className="text-base sm:text-xl font-normal text-[#F3EFE6] mt-1">
               {renders[lightboxIndex]?.title}
             </h3>
-            <div className="lb-dots flex justify-center items-center gap-1.5 mt-3" />
+
+            {/* LIGHTBOX REACT PAGINATION INDICATORS */}
+            <div className="flex justify-center items-center gap-2 mt-3">
+              {renders.map((_, idx) => (
+                <button
+                  key={idx}
+                  type="button"
+                  onClick={() => lightboxSwiper?.slideToLoop(idx)}
+                  className={`transition-all duration-300 cursor-pointer rounded-full border-none outline-none ${
+                    idx === lightboxIndex
+                      ? "w-7 h-[3px] bg-[#E8651A]"
+                      : "w-2.5 h-[3px] bg-white/30 hover:bg-white/60"
+                  }`}
+                  aria-label={`Slide ${idx + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}
-
-      <style>{`
-        /* Instagram-style dots */
-        .insta-dots .swiper-pagination-bullet,
-        .lb-dots .swiper-pagination-bullet {
-          opacity: 1 !important;
-          background: rgba(255,255,255,0.3) !important;
-          width: 6px !important; height: 6px !important;
-          border-radius: 50% !important;
-          margin: 0 3px !important;
-          cursor: pointer !important;
-          transition: all 0.25s !important;
-        }
-        .insta-dots .swiper-pagination-bullet-active,
-        .lb-dots .swiper-pagination-bullet-active {
-          background: #E8651A !important;
-          width: 18px !important;
-          border-radius: 3px !important;
-        }
-        .swiper-button-prev, .swiper-button-next { display: none !important; }
-        /* Mobile: remove side padding so image goes edge-to-edge */
-        @media (max-width: 639px) {
-          .insta-swiper { border-radius: 0; }
-        }
-      `}</style>
     </section>
   )
 }
