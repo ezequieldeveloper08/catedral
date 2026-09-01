@@ -233,6 +233,7 @@ export function CultosSection() {
                 alt={cultos.photos[selectedPhotoIndex].caption}
                 fill
                 priority
+                sizes="100vw"
                 className="object-contain sm:object-cover"
               />
             </div>

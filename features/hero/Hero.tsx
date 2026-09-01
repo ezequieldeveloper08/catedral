@@ -39,6 +39,7 @@ export function Hero() {
                   alt={render.title}
                   fill
                   priority={index === 0}
+                  sizes="100vw"
                   className="object-cover object-center brightness-[0.55] contrast-[1.05]"
                 />
               </div>

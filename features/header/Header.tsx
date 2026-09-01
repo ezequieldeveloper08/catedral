@@ -43,12 +43,13 @@ export function Header() {
       <div className="max-w-[1240px] mx-auto px-6 sm:px-8 flex items-center justify-between">
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
-          <div className="relative h-9 sm:h-11 w-36 sm:w-44">
+          <div className="relative h-10 sm:h-12 w-44 sm:w-56">
             <Image
-              src="/logos/LOGO-AD-CATALÃO-BRANCO.png"
+              src="/logos/MARCA-AD-CATALÃO-HORIZONTAL-BRANCA.png"
               alt="Logo AD Catalão"
               fill
               priority
+              sizes="(max-width: 640px) 176px, 224px"
               className="object-contain object-left"
             />
           </div>
@@ -99,11 +100,12 @@ export function Header() {
               >
                 <div className="space-y-8">
                   <SheetHeader className="text-left pb-4 border-b border-white/10">
-                    <div className="relative h-9 w-36">
+                    <div className="relative h-10 w-44">
                       <Image
-                        src="/logos/LOGO-AD-CATALÃO-BRANCO.png"
+                        src="/logos/MARCA-AD-CATALÃO-HORIZONTAL-BRANCA.png"
                         alt="Logo AD Catalão"
                         fill
+                        sizes="176px"
                         className="object-contain object-left"
                       />
                     </div>

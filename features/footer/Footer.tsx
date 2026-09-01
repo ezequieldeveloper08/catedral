@@ -40,11 +40,12 @@ export function Footer() {
         <div className="flex flex-wrap gap-12 lg:gap-16 items-start justify-between pb-14 border-b border-white/10">
           {/* LEFT: LOGO & ENTITY ADDRESS */}
           <div className="max-w-sm space-y-4">
-            <div className="relative h-10 w-44">
+            <div className="relative h-12 w-52">
               <Image
-                src="/logos/LOGO-AD-CATALÃO-BRANCO.png"
+                src="/logos/MARCA-AD-CATALÃO-HORIZONTAL-BRANCA.png"
                 alt="AD Catalão Ministério Madureira"
                 fill
+                sizes="208px"
                 className="object-contain object-left"
               />
             </div>

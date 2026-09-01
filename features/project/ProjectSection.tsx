@@ -86,6 +86,7 @@ export function ProjectSection() {
                     src={render.imageUrl}
                     alt={render.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1240px) 90vw, 1240px"
                     className="object-cover"
                   />
 
@@ -202,7 +203,7 @@ export function ProjectSection() {
               {renders.map((render) => (
                 <SwiperSlide key={render.id}>
                   <div className="relative w-full aspect-square sm:aspect-[16/9] bg-black">
-                    <Image src={render.imageUrl} alt={render.title} fill className="object-contain" />
+                    <Image src={render.imageUrl} alt={render.title} fill sizes="100vw" className="object-contain" />
                   </div>
                 </SwiperSlide>
               ))}

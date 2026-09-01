@@ -43,6 +43,7 @@ export function LeadershipSection() {
                 src={leadership.photoUrl}
                 alt={leadership.pastorNames}
                 fill
+                sizes="(max-width: 1024px) 100vw, 420px"
                 className="object-cover object-top filter grayscale-[15%] hover:grayscale-0 transition-all duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
