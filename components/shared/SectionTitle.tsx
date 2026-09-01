@@ -37,7 +37,7 @@ export function SectionTitle({
         </span>
       )}
 
-      <h2 className="text-[clamp(28px,3.4vw,46px)] font-light leading-[1.12] tracking-[-0.01em] text-[#EAE5DC]">
+      <h2 className="text-[clamp(28px,3.4vw,46px)] font-normal leading-[1.14] tracking-[-0.01em] text-[#F3EFE6]">
         {title}{" "}
         {titleHighlight && (
           <span className="font-semibold text-[#E8651A] block sm:inline">{titleHighlight}</span>
@@ -45,7 +45,7 @@ export function SectionTitle({
       </h2>
 
       {subtitle && (
-        <p className="text-[clamp(14px,1.2vw,16px)] font-light text-[rgba(234,229,220,0.72)] leading-[1.7] max-w-[56ch] mt-1">
+        <p className="text-[clamp(14px,1.2vw,16px)] font-normal text-[#EAE5DC]/85 leading-[1.7] max-w-[56ch] mt-1">
           {subtitle}
         </p>
       )}

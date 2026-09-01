@@ -39,34 +39,38 @@ export function Hero() {
                   alt={render.title}
                   fill
                   priority={index === 0}
-                  className="object-cover object-center brightness-[0.6] contrast-[1.05]"
+                  className="object-cover object-center brightness-[0.55] contrast-[1.05]"
                 />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* GRADIENT OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#17150F] via-[#17150F]/45 to-black/30 z-10" />
+        {/* DUAL GRADIENT OVERLAY FOR HIGH CONTRAST & LEGIBILITY */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#17150F] via-[#17150F]/85 to-[#17150F]/20 z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#17150F] via-[#17150F]/40 to-[#17150F]/70 z-10 pointer-events-none" />
       </div>
 
       {/* HERO CONTENT */}
       <div className="relative z-10 max-w-[1240px] w-full mx-auto flex flex-col items-start text-left">
-        {/* EYEBROW */}
-        <span className="eyebrow-accent mb-4 block animate-fadeIn">
-          NOVA CATEDRAL EM CATALÃO · GO
-        </span>
+        {/* EYEBROW BADGE */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#E8651A]/15 border border-[#E8651A]/35 backdrop-blur-md mb-5 animate-fadeIn shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-[#E8651A] animate-pulse" />
+          <span className="text-[11px] sm:text-[12px] font-semibold tracking-[0.22em] uppercase text-[#E8651A]">
+            NOVA CATEDRAL EM CATALÃO · GO
+          </span>
+        </div>
 
         {/* HEADLINE */}
-        <h1 className="font-light text-[clamp(32px,4.5vw,62px)] leading-[1.08] tracking-[-0.01em] text-[#EAE5DC] max-w-[20ch] text-balance">
+        <h1 className="font-normal sm:font-medium text-[clamp(32px,4.5vw,62px)] leading-[1.12] tracking-[-0.01em] text-[#F3EFE6] max-w-[20ch] text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
           Um templo que conta a história de um povo.{" "}
-          <span className="font-semibold text-[#E8651A] block sm:inline">
+          <span className="font-bold text-[#E8651A] block sm:inline drop-shadow-[0_2px_12px_rgba(232,101,26,0.3)]">
             Construído pela fé.
           </span>
         </h1>
 
         {/* SUBTITLE */}
-        <p className="mt-5 max-w-[56ch] font-light text-[clamp(14px,1.15vw,16px)] leading-[1.6] text-[rgba(234,229,220,0.85)]">
+        <p className="mt-5 max-w-[56ch] font-normal text-[clamp(14px,1.15vw,16px)] leading-[1.65] text-[#EAE5DC]/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
           O novo templo sede da AD Catalão está em construção. Três pavimentos, arquitetura contemporânea e a igreja em pleno funcionamento durante toda a obra.
         </p>
 
@@ -108,7 +112,7 @@ export function Hero() {
               />
             ))}
           </div>
-          <span className="text-[11px] tracking-[0.16em] uppercase font-light text-[rgba(234,229,220,0.6)]">
+          <span className="text-[11px] tracking-[0.16em] uppercase font-medium text-[rgba(234,229,220,0.75)] drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
             0{activeIndex + 1} / 0{renders.length} — {renders[activeIndex].badge}
           </span>
         </div>

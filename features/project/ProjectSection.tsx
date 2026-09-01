@@ -18,7 +18,8 @@ import "swiper/css/pagination"
 
 export function ProjectSection() {
   const { renders, pillars } = siteContent
-  const [swiper, setSwiper] = useState<SwiperType | null>(null)
+  const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null)
+  const [lightboxSwiper, setLightboxSwiper] = useState<SwiperType | null>(null)
   const [activeIndex, setActiveIndex] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState(0)
@@ -74,7 +75,7 @@ export function ProjectSection() {
             loop
             speed={500}
             grabCursor
-            onSwiper={setSwiper}
+            onSwiper={setMainSwiper}
             onSlideChange={(s) => setActiveIndex(s.realIndex)}
             className="insta-swiper w-full"
           >
@@ -101,7 +102,7 @@ export function ProjectSection() {
                   <button
                     type="button"
                     onClick={() => openLightbox(idx)}
-                    className="absolute top-3 left-3 p-2 bg-black/50 backdrop-blur-sm hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition-all duration-200 cursor-pointer"
+                    className="absolute top-3 left-3 p-2 bg-black/50 backdrop-blur-sm hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition-all duration-200 cursor-pointer z-10"
                     aria-label="Expandir"
                   >
                     <Maximize2 className="size-3.5" />
@@ -130,43 +131,42 @@ export function ProjectSection() {
 
           {/* Desktop arrow nav */}
           <button
-            onClick={() => swiper?.slidePrev()}
-            className="hidden sm:flex absolute left-3 top-[45%] -translate-y-1/2 z-10 p-2.5 bg-black/60 hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition-all cursor-pointer items-center"
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation()
+              mainSwiper?.slidePrev()
+            }}
+            className="hidden sm:flex absolute left-3 top-[45%] -translate-y-1/2 z-20 p-2.5 bg-black/60 hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition-all cursor-pointer items-center"
             aria-label="Anterior"
           >
             <ChevronLeft className="size-5" />
           </button>
           <button
-            onClick={() => swiper?.slideNext()}
-            className="hidden sm:flex absolute right-3 top-[45%] -translate-y-1/2 z-10 p-2.5 bg-black/60 hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition-all cursor-pointer items-center"
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation()
+              mainSwiper?.slideNext()
+            }}
+            className="hidden sm:flex absolute right-3 top-[45%] -translate-y-1/2 z-20 p-2.5 bg-black/60 hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition-all cursor-pointer items-center"
             aria-label="Próximo"
           >
             <ChevronRight className="size-5" />
           </button>
         </div>
 
-        {/* Mobile CTA */}
-        <div className="sm:hidden px-6 mt-4">
+        {/* CTA BUTTON (UNIFIED MOBILE & DESKTOP) */}
+        <div className="mt-6 sm:mt-8 flex justify-center px-6">
           <DonationModal>
-            <button type="button" className="btn-evor-accent w-full cursor-pointer text-center">
+            <button type="button" className="btn-evor-accent w-full sm:w-auto cursor-pointer text-center">
               Fazer Parte Desta Obra
             </button>
           </DonationModal>
         </div>
       </div>
 
-      {/* Specs + desktop CTA */}
-      <div className="max-w-[1240px] mx-auto px-6 sm:px-12 lg:px-20 mt-12 sm:mt-20 space-y-8">
-        {/* Desktop CTA */}
-        <div className="hidden sm:flex justify-center">
-          <DonationModal>
-            <button type="button" className="btn-evor-accent cursor-pointer">
-              Fazer Parte Desta Obra
-            </button>
-          </DonationModal>
-        </div>
-
-        {/* SPECIFICATIONS */}
+      {/* SPECIFICATIONS (TEMP COMMENTED OUT) */}
+      {/*
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-12 lg:px-20 mt-12 sm:mt-20">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {pillars.map((pillar, index) => {
             const Icon = specIcons[pillar.iconName] || CheckCircle2
@@ -192,13 +192,14 @@ export function ProjectSection() {
           })}
         </div>
       </div>
+      */}
 
       {/* ── LIGHTBOX ── */}
       {lightboxOpen && (
         <div className="fixed inset-0 z-50 bg-black/95 flex flex-col items-center justify-center" onClick={closeLightbox}>
           <div className="w-full flex items-center justify-between px-4 py-3 shrink-0" onClick={(e) => e.stopPropagation()}>
             <span className="text-[11px] tracking-[0.2em] uppercase text-[#E8651A] font-semibold">
-              {activeIndex + 1} / {renders.length}
+              {lightboxIndex + 1} / {renders.length}
             </span>
             <button type="button" onClick={closeLightbox} className="p-2 bg-white/10 hover:bg-white/20 text-white rounded-[2px] transition cursor-pointer" aria-label="Fechar">
               <X className="size-5" />
@@ -212,6 +213,7 @@ export function ProjectSection() {
               pagination={{ el: ".lb-dots", clickable: true }}
               loop
               grabCursor
+              onSwiper={setLightboxSwiper}
               onSlideChange={(s) => setLightboxIndex(s.realIndex)}
               className="w-full"
             >
@@ -224,10 +226,26 @@ export function ProjectSection() {
               ))}
             </Swiper>
 
-            <button type="button" onClick={() => swiper?.slidePrev()} className="lb-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/70 hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition cursor-pointer flex items-center" aria-label="Anterior">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation()
+                lightboxSwiper?.slidePrev()
+              }}
+              className="lb-prev absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 p-3 bg-black/70 hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition cursor-pointer flex items-center"
+              aria-label="Anterior"
+            >
               <ChevronLeft className="size-5 sm:size-6" />
             </button>
-            <button type="button" onClick={() => swiper?.slideNext()} className="lb-next absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 bg-black/70 hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition cursor-pointer flex items-center" aria-label="Próximo">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation()
+                lightboxSwiper?.slideNext()
+              }}
+              className="lb-next absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 p-3 bg-black/70 hover:bg-[#E8651A] border border-white/20 text-white rounded-[2px] transition cursor-pointer flex items-center"
+              aria-label="Próximo"
+            >
               <ChevronRight className="size-5 sm:size-6" />
             </button>
           </div>
