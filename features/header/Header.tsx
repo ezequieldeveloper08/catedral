@@ -100,12 +100,12 @@ export function Header() {
               >
                 <div className="space-y-8">
                   <SheetHeader className="text-left pb-4 border-b border-white/10">
-                    <div className="relative h-10 w-44">
+                    <div className="relative h-10 w-48 max-w-[80%]">
                       <Image
                         src="/logos/MARCA-AD-CATALÃO-HORIZONTAL-BRANCA.png"
                         alt="Logo AD Catalão"
                         fill
-                        sizes="176px"
+                        sizes="192px"
                         className="object-contain object-left"
                       />
                     </div>
@@ -117,7 +117,7 @@ export function Header() {
                         key={link.href}
                         href={link.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="text-base font-light text-[#EAE5DC]/80 hover:text-[#EAE5DC] transition py-1"
+                        className="text-base font-normal text-[#EAE5DC]/90 hover:text-white transition py-1"
                       >
                         {link.label}
                       </Link>
@@ -130,7 +130,7 @@ export function Header() {
                     <button
                       type="button"
                       onClick={() => setMobileMenuOpen(false)}
-                      className="w-full bg-[#E8651A] text-[#EAE5DC] font-semibold text-xs tracking-[0.16em] uppercase py-3.5 rounded-[2px] transition"
+                      className="w-full bg-[#E8651A] hover:bg-[#D05A10] text-[#EAE5DC] font-semibold text-[11px] sm:text-xs tracking-[0.12em] uppercase py-3.5 px-3 rounded-[2px] transition text-center shadow-md cursor-pointer"
                     >
                       Contribuir com a Obra
                     </button>
