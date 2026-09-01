@@ -20,6 +20,7 @@ interface DonationModalProps {
 export function DonationModal({ children }: DonationModalProps) {
   const [open, setOpen] = useState(false)
   const [copiedKey, setCopiedKey] = useState(false)
+  const [copiedField, setCopiedField] = useState<string | null>(null)
   const { donations } = siteContent
 
   const handleCopyPix = () => {
@@ -29,6 +30,15 @@ export function DonationModal({ children }: DonationModalProps) {
       description: "Cole no app do seu banco para transferir sua contribuição.",
     })
     setTimeout(() => setCopiedKey(false), 2500)
+  }
+
+  const handleCopyField = (label: string, value: string) => {
+    navigator.clipboard.writeText(value)
+    setCopiedField(label)
+    toast.success(`${label} copiado!`, {
+      description: value,
+    })
+    setTimeout(() => setCopiedField(null), 2500)
   }
 
   return (
@@ -47,33 +57,37 @@ export function DonationModal({ children }: DonationModalProps) {
             <span className="eyebrow-accent">
               Contribuição e Semeadura
             </span>
-            <DialogTitle className="text-2xl font-light text-[#EAE5DC]">
-              Edifique a <span className="font-semibold text-[#E8651A]">Nova Catedral</span>
+            <DialogTitle className="text-2xl font-normal text-[#F3EFE6]">
+              Edifique a <span className="font-bold text-[#E8651A]">Nova Catedral</span>
             </DialogTitle>
-            <DialogDescription className="text-sm font-light text-[rgba(234,229,220,0.7)] leading-relaxed">
+            <DialogDescription className="text-xs sm:text-sm font-normal text-[#EAE5DC]/80 leading-relaxed">
               Cada oferta é um tijolo espiritual e físico nessa grande colheita em Catalão e região.
             </DialogDescription>
           </DialogHeader>
 
-          <Tabs defaultValue="pix" className="mt-4">
-            <TabsList className="grid grid-cols-3 bg-[#1c1913] border border-white/10 p-1">
+          <Tabs defaultValue="pix" className="mt-4 w-full">
+            <TabsList className="grid grid-cols-3 bg-[#13110C] border border-white/10 p-1 w-full rounded-[4px] gap-1">
               <TabsTrigger
                 value="pix"
-                className="text-xs uppercase tracking-wider data-[state=active]:bg-[#E8651A] data-[state=active]:text-[#EAE5DC]"
+                className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-medium py-2.5 sm:py-3 rounded-[2px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer"
               >
-                Pix
+                <QrCode className="size-3.5 sm:size-4 shrink-0" />
+                <span>Pix</span>
               </TabsTrigger>
               <TabsTrigger
                 value="cartao"
-                className="text-xs uppercase tracking-wider data-[state=active]:bg-[#E8651A] data-[state=active]:text-[#EAE5DC]"
+                className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-medium py-2.5 sm:py-3 rounded-[2px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer"
               >
-                Cartão
+                <CreditCard className="size-3.5 sm:size-4 shrink-0" />
+                <span>Cartão</span>
               </TabsTrigger>
               <TabsTrigger
                 value="banco"
-                className="text-xs uppercase tracking-wider data-[state=active]:bg-[#E8651A] data-[state=active]:text-[#EAE5DC]"
+                className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-medium py-2.5 sm:py-3 rounded-[2px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer"
               >
-                Transferência
+                <Landmark className="size-3.5 sm:size-4 shrink-0" />
+                <span className="hidden xs:inline">Transferência</span>
+                <span className="xs:hidden">TED/DOC</span>
               </TabsTrigger>
             </TabsList>
 
@@ -151,32 +165,46 @@ export function DonationModal({ children }: DonationModalProps) {
 
             {/* TAB TRANSFERÊNCIA */}
             <TabsContent value="banco" className="space-y-4 pt-4">
-              <div className="bg-[#1c1913] border border-white/10 p-5 rounded-[2px] space-y-3">
-                <div className="flex items-center gap-2 text-sm text-[#EAE5DC] mb-2">
+              <div className="bg-[#1c1913] border border-white/10 p-4 sm:p-5 rounded-[2px] space-y-3.5">
+                <div className="flex items-center gap-2 text-sm text-[#F3EFE6] pb-2 border-b border-white/10">
                   <Landmark className="size-4 text-[#E8651A]" />
-                  <span className="font-medium">Dados Bancários para TED / DOC</span>
+                  <span className="font-medium">Dados Bancários para Transferência (TED / DOC)</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div>
-                    <span className="text-[rgba(234,229,220,0.5)] block">Banco:</span>
-                    <span className="font-medium text-[#EAE5DC]">{donations.bankTransfer.bankName}</span>
-                  </div>
-                  <div>
-                    <span className="text-[rgba(234,229,220,0.5)] block">Agência:</span>
-                    <span className="font-medium text-[#EAE5DC]">{donations.bankTransfer.agency}</span>
-                  </div>
-                  <div>
-                    <span className="text-[rgba(234,229,220,0.5)] block">Conta Corrente:</span>
-                    <span className="font-medium text-[#EAE5DC]">{donations.bankTransfer.account}</span>
-                  </div>
-                  <div>
-                    <span className="text-[rgba(234,229,220,0.5)] block">CNPJ:</span>
-                    <span className="font-medium text-[#EAE5DC]">{donations.bankTransfer.cnpj}</span>
-                  </div>
-                </div>
-                <div className="pt-2 text-xs text-[rgba(234,229,220,0.7)] border-t border-white/10">
-                  <span className="text-[rgba(234,229,220,0.5)]">Favorecido:</span> {donations.bankTransfer.favored}
+                <div className="space-y-2.5">
+                  {[
+                    { label: "Banco", value: donations.bankTransfer.bankName },
+                    { label: "Agência", value: donations.bankTransfer.agency },
+                    { label: "Conta Corrente", value: donations.bankTransfer.account },
+                    { label: "CNPJ", value: donations.bankTransfer.cnpj },
+                    { label: "Favorecido", value: donations.bankTransfer.favored },
+                  ].map((field) => (
+                    <div
+                      key={field.label}
+                      className="bg-[#13110C] border border-white/10 p-2.5 sm:p-3 flex items-center justify-between gap-3 rounded-[2px]"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-[#E8651A] block">
+                          {field.label}
+                        </span>
+                        <span className="font-mono text-xs sm:text-sm text-[#F3EFE6] truncate block select-all font-medium">
+                          {field.value}
+                        </span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => handleCopyField(field.label, field.value)}
+                        className="p-2 hover:bg-white/10 text-[#EAE5DC] rounded cursor-pointer transition shrink-0 flex items-center gap-1"
+                        title={`Copiar ${field.label}`}
+                      >
+                        {copiedField === field.label ? (
+                          <Check className="size-4 text-emerald-400" />
+                        ) : (
+                          <Copy className="size-4 text-[#E8651A]" />
+                        )}
+                      </button>
+                    </div>
+                  ))}
                 </div>
               </div>
             </TabsContent>
