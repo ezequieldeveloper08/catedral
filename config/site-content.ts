@@ -116,8 +116,8 @@ export const siteContent = {
       phone: "(64) 3441-4477",
       whatsapp: "556434414477",
       whatsappDisplay: "(64) 3441-4477",
-      email: "faleconosco@adcatalao.com.br",
-      domain: "adcatalao.com.br",
+      email: "faleconosco@catedraladcatalao.com.br",
+      domain: "catedraladcatalao.com.br",
     },
     social: {
       instagram: "https://www.instagram.com/adcatalaooficial",
