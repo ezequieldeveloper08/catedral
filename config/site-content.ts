@@ -232,14 +232,14 @@ export const siteContent = {
     modalTitle: "Faça Parte Desta Conquista Histórica",
     modalSubtitle: "Sua contribuição voluntária é fundamental para erguer este altar de adoração a Deus.",
     pix: {
-      key: "pix@catedraladcatalao.com.br",
-      keyType: "Chave E-mail / CNPJ Oficial",
+      key: "ofertacatedral@gmail.com",
+      keyType: "E-mail",
       beneficiary: "Igreja Evangélica Assembleia de Deus de Catalão",
-      bank: "Sicoob / Bradesco",
+      bank: "Unicred (136)",
       city: "Catalão - GO",
       // Código Pix Copia e Cola padrão (substituível pela string oficial Pix gerada pelo banco)
       copyPasteCode:
-        "00020126580014br.gov.bcb.pix0136pix@catedraladcatalao.com.br5204000053039865802BR5925AD CATALAO MADUREIRA6007CATALAO62070503***6304D1B8",
+        "00020126580014br.gov.bcb.pix0125ofertacatedral@gmail.com5204000053039865802BR5925AD CATALAO MADUREIRA6007CATALAO62070503***6304D1B8",
       qrCodeStaticUrl: "/logos/MARCA-AD-CATALÃO-HORIZONTAL-COLORIDA.png",
       instructions: [
         "Abra o aplicativo do seu banco no celular.",
@@ -248,17 +248,17 @@ export const siteContent = {
         "Guarde o comprovante como lembrança da sua semeadura na Casa de Deus!",
       ],
     },
-    creditCard: {
+    /* creditCard: {
       title: "Doação via Cartão de Crédito ou Boleto",
       description:
         "Caso prefira contribuir através de cartão de crédito (com opção de parcelamento) ou boleto bancário, você será direcionado para o nosso ambiente de pagamento 100% seguro.",
       paymentUrl: "https://doacoes.catedraladcatalao.com.br/contribuir",
       buttonText: "Contribuir no Cartão de Crédito",
-    },
+    }, */
     bankTransfer: {
-      bankName: "Banco Bradesco (237)",
-      agency: "1234-5",
-      account: "98765-4",
+      bankName: "Unicred (136)",
+      agency: "5341",
+      account: "1349520",
       accountType: "Conta Corrente",
       favored: "Igreja Evangélica Assembleia de Deus em Catalão",
       cnpj: "01.234.567/0001-89",

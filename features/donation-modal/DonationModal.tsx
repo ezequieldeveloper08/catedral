@@ -66,7 +66,7 @@ export function DonationModal({ children }: DonationModalProps) {
           </DialogHeader>
 
           <Tabs defaultValue="pix" className="mt-4 w-full">
-            <TabsList className="grid grid-cols-3 bg-[#13110C] border border-white/10 p-1 w-full rounded-[4px] gap-1">
+            <TabsList className="grid grid-cols-2 bg-[#13110C] border border-white/10 p-1 w-full rounded-[4px] gap-1">
               <TabsTrigger
                 value="pix"
                 className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-medium py-2 sm:py-2.5 rounded-[2px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer"
@@ -74,13 +74,13 @@ export function DonationModal({ children }: DonationModalProps) {
                 <QrCode className="size-3.5 sm:size-4 shrink-0 text-current" />
                 <span>Pix</span>
               </TabsTrigger>
-              <TabsTrigger
+              {/* <TabsTrigger
                 value="cartao"
                 className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-medium py-2 sm:py-2.5 rounded-[2px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer"
               >
                 <CreditCard className="size-3.5 sm:size-4 shrink-0 text-current" />
                 <span>Cartão</span>
-              </TabsTrigger>
+              </TabsTrigger> */}
               <TabsTrigger
                 value="banco"
                 className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-medium py-2 sm:py-2.5 rounded-[2px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer"
@@ -137,30 +137,30 @@ export function DonationModal({ children }: DonationModalProps) {
               </button>
             </TabsContent>
 
-            {/* TAB CARTÃO */}
-            <TabsContent value="cartao" className="space-y-4 pt-3.5">
+            {/* TAB CARTÃO (Comentado temporariamente) */}
+            {/* <TabsContent value="cartao" className="space-y-4 pt-3.5">
               <div className="bg-[#1c1913] border border-white/10 p-5 rounded-[2px] space-y-3.5 text-center">
                 <CreditCard className="size-7 text-[#E8651A] mx-auto stroke-[1.5]" />
                 <div className="space-y-1">
                   <h4 className="text-xs sm:text-sm font-medium text-[#EAE5DC]">
-                    {donations.creditCard.title}
+                    {donations.creditCard?.title}
                   </h4>
                   <p className="text-xs font-normal text-[#EAE5DC]/70 max-w-sm mx-auto leading-relaxed">
-                    {donations.creditCard.description}
+                    {donations.creditCard?.description}
                   </p>
                 </div>
               </div>
 
               <a
-                href={donations.creditCard.paymentUrl}
+                href={donations.creditCard?.paymentUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full btn-evor-accent flex items-center justify-center gap-2 text-center py-3 text-xs"
               >
-                <span>{donations.creditCard.buttonText}</span>
+                <span>{donations.creditCard?.buttonText}</span>
                 <ExternalLink className="size-4" />
               </a>
-            </TabsContent>
+            </TabsContent> */}
 
             {/* TAB TRANSFERÊNCIA */}
             <TabsContent value="banco" className="space-y-3.5 pt-3.5">
