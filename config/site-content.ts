@@ -125,8 +125,8 @@ export const siteContent = {
       facebook: "https://www.facebook.com/adcatalaooficial",
     },
     legal: {
-      cnpj: "01.234.567/0001-89",
-      legalName: "Igreja Evangélica Assembleia de Deus em Catalão - Ministério Madureira",
+      cnpj: "01.326.651/0001-39",
+      legalName: "Igreja Evangélica Assembleia de Deus - Ministério de Madureira - Catalão GO",
     },
   },
 
@@ -234,7 +234,7 @@ export const siteContent = {
     pix: {
       key: "ofertacatedral@gmail.com",
       keyType: "E-mail",
-      beneficiary: "Igreja Evangélica Assembleia de Deus de Catalão",
+      beneficiary: "Igreja Evangélica Assembleia de Deus - Ministério de Madureira - Catalão GO",
       bank: "Unicred (136)",
       city: "Catalão - GO",
       // Código Pix Copia e Cola padrão (substituível pela string oficial Pix gerada pelo banco)
@@ -260,8 +260,8 @@ export const siteContent = {
       agency: "5341",
       account: "1349520",
       accountType: "Conta Corrente",
-      favored: "Igreja Evangélica Assembleia de Deus em Catalão",
-      cnpj: "01.234.567/0001-89",
+      favored: "Igreja Evangélica Assembleia de Deus - Ministério de Madureira - Catalão GO",
+      cnpj: "01.326.651/0001-39",
     },
   },
 
