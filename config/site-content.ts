@@ -88,16 +88,16 @@ export const siteContent = {
   church: {
     name: "Igreja Evangélica Assembleia de Deus — Ministério Madureira",
     shortName: "AD Catalão",
-    projectName: "Nova Catedral AD Catalão",
-    tagline: "Um novo marco de fé, adoração e esperança no coração de Catalão.",
-    headline: "A Nova Catedral da AD Catalão: Um Altar para 4.000 Vidas",
+    projectName: "Catedral AD Catalão",
+    tagline: "Uma história escrita pelas mãos de um povo que caminha e constrói pela fé!",
+    headline: "CONSTRUÍDO PELA FÉ: A Catedral da AD Catalão!",
     subheadline:
-      "Um projeto arquitetônico solene e imponente com 3 pavimentos, acessibilidade plena e capacidade para acolher a cidade de Catalão em adoração.",
-    pedraFundamentalBadge: "Lançamento Oficial • Pedra Fundamental",
-    pedraFundamentalDate: "Dia 13 de Setembro de 2026",
-    statusNoticeTitle: "Igreja em Pleno Funcionamento Durante as Obras",
+      "Mais do que paredes, colunas e concreto, estamos erguendo um memorial de milagres. Uma história escrita pelas mãos de um povo que caminha e constrói pela fé! A nossa catedral já é uma realidade em construção. Um projeto com arquitetura contemporânea e três pavimentos totalmente planejados para acolher as nossas famílias e expandir o Reino de Deus.",
+    pedraFundamentalBadge: "Realidade em Construção • 4.000 Lugares • 3 Pavimentos",
+    pedraFundamentalDate: "Em Andamento",
+    statusNoticeTitle: "A obra não para, e a igreja também não!",
     statusNoticeDescription:
-      "Informamos a todos os membros, visitantes e à comunidade que nossos cultos e atividades continuam normais! A construção será executada em etapas planejadas, iniciando pelas novas fachadas e áreas externas antes de qualquer alteração na estrutura existente.",
+      "O maior testemunho da nossa fé é que, mesmo em meio aos tijolos e andaimes, a igreja segue em pleno funcionamento. Cada culto, cada oração e cada vida transformada acontecem enquanto o milagre da construção se espalha ao nosso redor. Cada tijolo carrega o amor, a dedicação e a semente de cada um de nós. Juntos, estamos edificando o amanhã!",
     address: {
       street: "Rua do Cristiano Aires, 649",
       neighborhood: "Bairro N. Sra. de Fátima",
@@ -134,7 +134,7 @@ export const siteContent = {
     {
       value: "4.000",
       label: "Lugares na Nave Principal",
-      description: "Amplo auditório planejado para receber grandes celebrações com conforto e visibilidade total.",
+      description: "Amplo auditório planejado para receber grandes celebrações com conforto e visibilidade irrestrita.",
       iconName: "Users",
     },
     {
@@ -150,9 +150,9 @@ export const siteContent = {
       iconName: "HeartHandshake",
     },
     {
-      value: "6.500 m²",
-      label: "Área de Edificação",
-      description: "Engenharia de ponta com tratamento acústico termoacústico e iluminação cênica sustentável.",
+      value: "100%",
+      label: "Em Pleno Funcionamento",
+      description: "A obra não para e a igreja também não! Reuniões e cultos com programação normal.",
       iconName: "ShieldCheck",
     },
   ] as MetricItem[],
@@ -172,7 +172,7 @@ export const siteContent = {
       title: "Esplanada e Iluminação Cênica Noturna",
       subtitle: "Presença e Beleza no Cenário Urbano",
       description:
-        "Projeto luminotécnico concebido para valorizar cada linha da construção à noite, transmitindo calor, acolhimento e solenidade aos que chegam para adorar.",
+        "Projeto luminotécnico concebido para valorizar cada linha da construção à noite, transmitindo calor, acolhimento e solenidade aos que chegan para adorar.",
       imageUrl: "/images/faixada-02.jpeg",
       badge: "Vista Noturna",
     },
@@ -193,38 +193,34 @@ export const siteContent = {
     description:
       "Veja o tour virtual renderizado em alta definição mostrando a volumetria, os três pavimentos, a grandiosa nave de 4.000 lugares e os espaços ministeriais.",
     posterImage: "/images/faixada-01.jpeg",
-    videoUrl: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", // Substitua pelo link real do vídeo do YouTube quando disponível
+    videoUrl: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
     duration: "Tour 3D Completo",
   },
 
   pillars: [
     {
-      title: "Nave Principal para 4.000 Fiéis",
-      description:
-        "Visibilidade perfeita em qualquer ângulo, poltronas confortáveis e circulação otimizada para momentos de grande adoração e comunhão.",
-      badge: "Capacidade & Conforto",
-      iconName: "Users",
+      title: "Arquitetura Contemporânea",
+      description: "Linhas modernas e inovadoras que redefinem o cenário urbano da nossa cidade.",
+      badge: "Design Contemporâneo",
+      iconName: "Building2",
     },
     {
-      title: "3 Pavimentos com Infraestrutura Completa",
-      description:
-        "Salas temáticas para o Departamento Infantil, auditório para a Juventude, salas pastorais, secretaria moderna e salas de apoio.",
-      badge: "Espaço Ministerial",
-      iconName: "Layers",
-    },
-    {
-      title: "Acústica & Tecnologia de Ponta",
-      description:
-        "Isolamento acústico de padrão internacional e infraestrutura de áudio, vídeo 4K e transmissão ao vivo para alcançar o mundo.",
+      title: "Tecnologia de Ponta",
+      description: "Infraestrutura de som, iluminação e transmissão totalmente integradas para conectar você ao altar.",
       badge: "Alta Tecnologia",
-      iconName: "Volume2",
+      iconName: "Video",
     },
     {
-      title: "Construção Planejada em Fases",
-      description:
-        "Cronograma inteligente que viabiliza a execução da nova fachada e áreas externas mantendo as reuniões e cultos funcionando sem interrupção.",
-      badge: "Engenharia Eficiente",
-      iconName: "Hammer",
+      title: "Visibilidade Irrestrita",
+      description: "Engenharia inteligente projetada para que cada uma das 4.000 pessoas tenha uma visão perfeita e imersiva de qualquer ponto do templo.",
+      badge: "Visão Imperdível",
+      iconName: "Eye",
+    },
+    {
+      title: "Acessibilidade Total",
+      description: "Ambientes amplos, rampas e rotas planejadas para acolher a todos com dignidade, conforto e segurança.",
+      badge: "Inclusão e Conforto",
+      iconName: "Accessibility",
     },
   ] as ProjectPillar[],
 
@@ -237,7 +233,6 @@ export const siteContent = {
       beneficiary: "Igreja Evangélica Assembleia de Deus - Ministério de Madureira - Catalão GO",
       bank: "Unicred (136)",
       city: "Catalão - GO",
-      // Código Pix Copia e Cola padrão (substituível pela string oficial Pix gerada pelo banco)
       copyPasteCode:
         "00020126580014br.gov.bcb.pix0125ofertacatedral@gmail.com5204000053039865802BR5925AD CATALAO MADUREIRA6007CATALAO62070503***6304D1B8",
       qrCodeStaticUrl: "/logos/MARCA-AD-CATALÃO-HORIZONTAL-COLORIDA.png",
@@ -248,13 +243,6 @@ export const siteContent = {
         "Guarde o comprovante como lembrança da sua semeadura na Casa de Deus!",
       ],
     },
-    /* creditCard: {
-      title: "Doação via Cartão de Crédito ou Boleto",
-      description:
-        "Caso prefira contribuir através de cartão de crédito (com opção de parcelamento) ou boleto bancário, você será direcionado para o nosso ambiente de pagamento 100% seguro.",
-      paymentUrl: "https://doacoes.catedraladcatalao.com.br/contribuir",
-      buttonText: "Contribuir no Cartão de Crédito",
-    }, */
     bankTransfer: {
       bankName: "Unicred (136)",
       agency: "5341",
@@ -266,58 +254,51 @@ export const siteContent = {
   },
 
   leadership: {
-    title: "Nossa História & Liderança Pastoral",
-    subtitle: "Uma liderança comprometida com a Palavra e a expansão do Reino de Deus.",
+    title: "Palavra Pastoral",
+    subtitle: "Um legado de fé que transforma gerações em Catalão e no mundo.",
     pastorNames: "Pastores Presidentes do Campo de Catalão",
     role: "Presidência • AD Catalão Ministério Madureira",
     photoUrl: "/logos/FOTO-PASTORES-DO-CAMPO-AD-CATALÃO.jpg",
     quote:
-      "A construção da Nova Catedral não é apenas sobre concreto, vidro e ferro. É sobre edificar um refúgio de esperança, um celeiro de salvação e um legado de fé indelével para as futuras gerações de Catalão e de todo o Brasil.",
+      "Essa casa de oração será um local onde vidas serão abençoadas e alcançadas pelo poder de Deus.",
     historyText: [
-      "A Assembleia de Deus Ministério Madureira em Catalão tem uma trajetória marcada por milagres, dedicação comunitária e zelo pelo evangelho de Cristo.",
-      "Ao longo de décadas, a igreja viu milhares de famílias serem restauradas, vidas transformadas e vocações despertadas. O projeto da Nova Catedral nasce como resposta à oração e ao crescimento contínuo do povo de Deus.",
-      "Com a bênção do Senhor e o esforço conjunto de cada membro e cooperador, este novo templo será um farol de luz no centro da nossa cidade.",
+      "A Assembleia de Deus Ministério Madureira em Catalão consolida, há décadas, um legado de fé que transforma gerações ao semear esperança, amor e salvação. A partir de sua forte atuação local, a igreja expandiu suas fronteiras, estendendo seu impacto social e espiritual por todo o estado de Goiás, outros estados do Brasil e até outros países. Esse crescimento reflete o compromisso com a evangelização e com projetos sociais que apoiam a sociedade em diversas frentes.",
+      "Com uma trajetória marcada por milagres, dedicação e zelo pelo evangelho de Cristo, a igreja viu, ao longo de décadas, famílias sendo reestruturadas, vidas transformadas e vocações despertadas. Diante disso, o projeto da nova catedral nasce como resposta à oração e ao crescimento contínuo do povo de Deus.",
+      "Com a bênção do Senhor e o esforço conjunto de cada membro, congregado e até mesmo daqueles que, mesmo não professando a mesma fé, são movidos pelo Espírito Santo a abrir o coração para contribuir com esta obra, essa casa de oração será um local onde vidas serão abençoadas e alcançadas pelo poder de Deus.",
     ],
   },
 
   cultos: {
-    title: "Horários de Cultos & Programação Semanal",
-    subtitle: "A igreja permanece ativa! Venha celebrar conosco e trazer sua família.",
+    title: "Nossos Horários",
+    subtitle: "Venha clamar e adorar conosco! Nossa programação continua normal durante toda a obra:",
     schedule: [
       {
-        day: "Domingo",
-        time: "18h30",
-        name: "Culto da Família & Celebração",
-        description: "Reunião solene com louvor congregacional, adoração e ministração da Palavra para toda a família.",
-        category: "celebracao",
+        day: "Segunda a Sexta",
+        time: "06h às 08h e 18h",
+        name: "Reunião de Oração",
+        description: "Momentos diários de clamor, intercessão e busca da presença de Deus no início do dia e ao final da tarde.",
+        category: "oracao",
+      },
+      {
+        day: "Terça-feira",
+        time: "19h30",
+        name: "Culto de Ensino & Doutrina",
+        description: "Ministração da Palavra de Deus para edificação espiritual da igreja e fortalecimento de toda a família.",
+        category: "ensino",
       },
       {
         day: "Domingo",
         time: "09h00",
         name: "Escola Bíblica Dominical (EBD)",
-        description: "Estudo aprofundado das Sagradas Escrituras dividido por faixas etárias para crescimento espiritual.",
+        description: "Estudo aprofundado das Sagradas Escrituras dividido por faixas etárias para crescimento no conhecimento de Deus.",
         category: "ensino",
       },
       {
-        day: "Terça-feira",
-        time: "19h30",
-        name: "Culto de Doutrina & Oração",
-        description: "Ensino bíblico pastoral e momento especial de intercessão pelas famílias e pela nossa cidade.",
-        category: "oracao",
-      },
-      {
-        day: "Quinta-feira",
-        time: "19h30",
-        name: "Culto da Vitória & Libertação",
-        description: "Clamor por curas, milagres e testemunhos do poder de Deus operando na vida do Seu povo.",
+        day: "Domingo",
+        time: "18h30",
+        name: "Culto da Família & Celebração",
+        description: "Reunião solene com louvor congregacional, adoração e ministração profética para abençoar o seu lar.",
         category: "celebracao",
-      },
-      {
-        day: "Sábado",
-        time: "19h30",
-        name: "Culto de Jovens (UMADC)",
-        description: "Encontro vibrante da juventude com louvor contemporâneo, dinamismo e palavra inspiradora.",
-        category: "juventude",
       },
     ] as CultoItem[],
     photos: [
@@ -349,7 +330,12 @@ export const siteContent = {
     {
       question: "A igreja vai parar de funcionar durante a construção?",
       answer:
-        "Não! A igreja permanece em pleno e contínuo funcionamento. O plano de engenharia foi estruturado em fases, iniciando pelas fachadas e áreas externas, garantindo que os cultos e atividades ministeriais ocorram normalmente.",
+        "Não! A igreja permanece em pleno e contínuo funcionamento. A obra não para, e a igreja também não! Cada culto, cada oração e cada vida transformada acontecem normalmente.",
+    },
+    {
+      question: "Quais são os horários dos cultos durante a obra?",
+      answer:
+        "Segunda a Sexta (Oração): das 6h às 8h e às 18h. Terça-feira (Culto): às 19h30. Domingo: 9h e 18h30.",
     },
     {
       question: "Como posso acompanhar o andamento da obra e a prestação de contas?",
@@ -359,12 +345,13 @@ export const siteContent = {
     {
       question: "Qualquer pessoa pode contribuir com a construção?",
       answer:
-        "Sim! Toda contribuição voluntária de membros, amigos, empresas e parceiros que desejam semear nesta grande obra é muito bem-vinda e abençoada.",
+        "Sim! Toda contribuição voluntária de membros, congregados, amigos e parceiros movidos pelo Espírito Santo a semear nesta grande obra é muito bem-vinda e abençoada.",
     },
     {
       question: "Onde será a localização exata da Nova Catedral?",
       answer:
-        "A Nova Catedral está sendo edificada no endereço da Sede: Rua do Cristiano Aires, 649 - Bairro N. Sra. de Fátima, Catalão - GO, CEP: 75709-280.",
+        "A Catedral está sendo edificada no endereço da Sede: Rua do Cristiano Aires, 649 - Bairro N. Sra. de Fátima, Catalão - GO, CEP: 75709-280.",
     },
   ] as FaqItem[],
 }
+

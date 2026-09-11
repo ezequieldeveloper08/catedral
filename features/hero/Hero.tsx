@@ -40,37 +40,47 @@ export function Hero() {
                   fill
                   priority={index === 0}
                   sizes="100vw"
-                  className="object-cover object-center brightness-[0.55] contrast-[1.05]"
+                  className="object-cover object-center brightness-[0.93] contrast-[1.03]"
                 />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* DUAL GRADIENT OVERLAY FOR HIGH CONTRAST & LEGIBILITY */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#17150F] via-[#17150F]/85 to-[#17150F]/20 z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#17150F] via-[#17150F]/40 to-[#17150F]/70 z-10 pointer-events-none" />
+        {/* SOFT BALANCED OVERLAY */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#17150F] via-[#17150F]/70 to-transparent z-10 pointer-events-none max-w-4xl" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#17150F] via-transparent to-black/20 z-10 pointer-events-none" />
       </div>
 
       {/* HERO CONTENT */}
       <div className="relative z-10 max-w-[1240px] w-full mx-auto flex flex-col items-start text-left">
         {/* EYEBROW */}
-        <span className="eyebrow-accent mb-5 animate-fadeIn">
-          NOVA CATEDRAL EM CATALÃO · GO
+        <span className="eyebrow-accent mb-4 animate-fadeIn">
+          CONSTRUÍDO PELA FÉ
         </span>
 
         {/* HEADLINE */}
-        <h1 className="font-normal sm:font-medium text-[clamp(32px,4.5vw,62px)] leading-[1.12] tracking-[-0.01em] text-[#F3EFE6] max-w-[20ch] text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
-          Um templo que conta a história de um povo.{" "}
-          <span className="font-bold text-[#E8651A] block sm:inline drop-shadow-[0_2px_12px_rgba(232,101,26,0.3)]">
-            Construído pela fé.
+        <h1 className="font-normal sm:font-medium text-[clamp(32px,4.5vw,62px)] leading-[1.12] tracking-[-0.01em] text-[#F3EFE6] max-w-[22ch] text-balance drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
+          A Catedral da{" "}
+          <span className="font-bold text-[#E8651A] drop-shadow-[0_2px_12px_rgba(232,101,26,0.3)]">
+            AD Catalão!
           </span>
         </h1>
 
         {/* SUBTITLE */}
-        <p className="mt-5 max-w-[56ch] font-normal text-[clamp(14px,1.15vw,16px)] leading-[1.65] text-[#EAE5DC]/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-          O novo templo sede da AD Catalão está em construção. Três pavimentos, arquitetura contemporânea e a igreja em pleno funcionamento durante toda a obra.
+        <p className="mt-5 max-w-[62ch] font-normal text-[clamp(14px,1.15vw,16px)] leading-[1.65] text-[#EAE5DC]/95 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+          Mais do que paredes, colunas e concreto, estamos erguendo um memorial de milagres. Uma história escrita pelas mãos de um povo que caminha e constrói pela fé! A nossa catedral já é uma realidade em construção. Um projeto com arquitetura contemporânea e três pavimentos totalmente planejados para acolher as nossas famílias e expandir o Reino de Deus.
         </p>
+
+        {/* BADGES / METRICS HIGHLIGHT */}
+        <div className="mt-5 flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-2 rounded-[2px] bg-[#E8651A]/15 border border-[#E8651A]/40 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#E8651A] backdrop-blur-md">
+            4.000 Lugares
+          </span>
+          <span className="inline-flex items-center gap-2 rounded-[2px] bg-white/10 border border-white/20 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-[#EAE5DC] backdrop-blur-md">
+            3 Pavimentos
+          </span>
+        </div>
 
         {/* CTAs */}
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-6 w-full sm:w-auto">
@@ -101,11 +111,10 @@ export function Hero() {
                 key={render.id}
                 type="button"
                 onClick={() => swiper?.slideToLoop(idx)}
-                className={`transition-all duration-400 rounded-none cursor-pointer ${
-                  idx === activeIndex
-                    ? "w-8 h-[2px] bg-[#E8651A]"
-                    : "w-4 h-[2px] bg-white/30 hover:bg-white/60"
-                }`}
+                className={`transition-all duration-400 rounded-none cursor-pointer ${idx === activeIndex
+                  ? "w-8 h-[2px] bg-[#E8651A]"
+                  : "w-4 h-[2px] bg-white/30 hover:bg-white/60"
+                  }`}
                 aria-label={`Slide ${idx + 1}`}
               />
             ))}

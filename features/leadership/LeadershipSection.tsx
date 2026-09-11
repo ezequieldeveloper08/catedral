@@ -13,10 +13,10 @@ export function LeadershipSection() {
           {/* LEFT: TEXT CONTENT */}
           <div className="lg:col-span-7 space-y-6">
             <SectionTitle
-              badge="Liderança & História"
-              title="Um legado de fé que"
-              titleHighlight="transforma gerações."
-              subtitle="Há décadas a Assembleia de Deus Ministério Madureira planta sementes de esperança, amor e salvação em Catalão e em todo o estado de Goiás."
+              badge="Mensagem da Presidência"
+              title="Palavra Pastoral"
+              titleHighlight=""
+              subtitle="Assembleia de Deus Ministério Madureira em Catalão — Um legado de fé que transforma gerações."
             />
 
             <div className="text-[clamp(14px,1.2vw,16px)] font-light leading-[1.75] text-[rgba(234,229,220,0.75)] space-y-4">

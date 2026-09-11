@@ -9,7 +9,7 @@ import { siteContent } from "@/config/site-content"
 import { SectionTitle } from "@/components/shared/SectionTitle"
 import { DonationModal } from "@/features/donation-modal/DonationModal"
 import {
-  Play, CheckCircle2, Layers, Volume2, Building2, Hammer,
+  Play, CheckCircle2, Layers, Volume2, Building2, Hammer, Video, Eye, Accessibility,
   X, Maximize2, ChevronLeft, ChevronRight,
 } from "lucide-react"
 
@@ -23,8 +23,11 @@ export function ProjectSection() {
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState(0)
 
-  const specIcons: Record<string, React.ElementType> = {
-    Users: Layers, Layers: Layers, Volume2: Volume2, Building2: Building2, Hammer: Hammer,
+  const pillarIcons: Record<string, React.ElementType> = {
+    Building2,
+    Video,
+    Eye,
+    Accessibility,
   }
 
   const openLightbox = (i: number) => {
@@ -45,10 +48,10 @@ export function ProjectSection() {
         {/* HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <SectionTitle
-            badge="O Projeto Arquitetônico"
-            title="Design contemporâneo projetado para"
-            titleHighlight="séculos de adoração."
-            subtitle="Um complexo de 3 pavimentos integrados com tecnologia acústica de ponta, visibilidade irrestrita e acessibilidade total para até 4.000 pessoas."
+            badge="Memorial para Gerações"
+            title="PROJETADA PARA SÉCULOS DE ADORAÇÃO:"
+            titleHighlight=""
+            subtitle="Mais do que uma grande obra de engenharia, estamos construindo um memorial que atravessará gerações. A Catedral AD Catalão foi concebida sob um design contemporâneo, unindo beleza arquitetônica com a máxima eficiência estrutural. Trata-se de um complexo moderno de 3 pavimentos integrados, planejado meticulosamente para os próximos séculos de evangelismo e adoração."
           />
           <button
             type="button"
@@ -61,6 +64,39 @@ export function ProjectSection() {
               Em Breve
             </span>
           </button>
+        </div>
+
+        {/* OS PILARES DA CATEDRAL AD CATALÃO */}
+        <div className="pt-4">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-[#E8651A] mb-6">
+            Os pilares da Catedral AD Catalão:
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            {pillars.map((pillar, idx) => {
+              const Icon = pillarIcons[pillar.iconName] || Building2
+              return (
+                <div
+                  key={idx}
+                  className="bg-[#1c1913] border border-white/10 p-6 flex flex-col justify-between space-y-4 hover:border-[#E8651A]/50 transition-all duration-300 rounded-[2px]"
+                >
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Icon className="size-4 text-[#E8651A] shrink-0 stroke-[1.75]" />
+                      <span className="text-[11px] font-semibold text-[#E8651A] uppercase tracking-wider block">
+                        {pillar.badge}
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-medium text-[#F3EFE6]">
+                      {pillar.title}
+                    </h4>
+                    <p className="text-xs font-normal text-[#EAE5DC]/75 leading-relaxed">
+                      {pillar.description}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
       </div>
 

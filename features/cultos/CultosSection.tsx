@@ -70,10 +70,10 @@ export function CultosSection() {
         {/* HEADER */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <SectionTitle
-            badge="Programação Semanal"
-            title="Venha cultuar conosco em"
-            titleHighlight="nossa sede atual."
-            subtitle="Nossas reuniões e celebrações continuam acontecendo normalmente enquanto a Nova Catedral é edificada."
+            badge="Nossos Horários"
+            title="Nossos Horários"
+            titleHighlight=""
+            subtitle="Venha clamar e adorar conosco! Nossa programação continua normal durante toda a obra:"
           />
 
           <a

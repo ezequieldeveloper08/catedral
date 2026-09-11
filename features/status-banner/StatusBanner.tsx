@@ -42,15 +42,15 @@ export function StatusBanner() {
             </span>
 
             <h2 className="text-[clamp(24px,3.2vw,44px)] font-normal leading-[1.15] tracking-[-0.01em] text-[#F3EFE6]">
-              A igreja permanece em <span className="font-semibold text-[#E8651A]">pleno funcionamento</span> durante as obras.
+              A obra não para, e a <span className="font-semibold text-[#E8651A]">igreja também não!</span>
             </h2>
 
             <div className="text-[clamp(14px,1.2vw,16px)] font-normal leading-[1.7] text-[#EAE5DC]/80 space-y-4">
               <p>
-                As obras foram minuciosamente planejadas para que nossa comunidade continue congregando e adorando sem nenhuma interrupção.
+                O maior testemunho da nossa fé é que, mesmo em meio aos tijolos e andaimes, a igreja segue em pleno funcionamento. Cada culto, cada oração e cada vida transformada acontecem enquanto o milagre da construção se espalha ao nosso redor.
               </p>
               <p>
-                Os trabalhos avançam primeiramente pela nova fachada e infraestrutura externa. O antigo templo só passará por intervenções diretas nas etapas finais, garantindo total conforto e segurança a todos os membros e visitantes.
+                Cada tijolo carrega o amor, a dedicação e a semente de cada um de nós. Juntos, estamos edificando o amanhã!
               </p>
             </div>
           </div>
