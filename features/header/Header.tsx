@@ -45,7 +45,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-3">
           <div className="relative h-10 sm:h-12 w-44 sm:w-56">
             <Image
-              src="/logos/MARCA-AD-CATALÃO-HORIZONTAL-BRANCA.png"
+              src="/logos/logo.svg"
               alt="Logo AD Catalão"
               fill
               priority
