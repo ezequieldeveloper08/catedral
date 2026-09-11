@@ -258,7 +258,7 @@ export const siteContent = {
     subtitle: "Um legado de fé que transforma gerações em Catalão e no mundo.",
     pastorNames: "Pastores Presidentes do Campo de Catalão",
     role: "Presidência • AD Catalão Ministério Madureira",
-    photoUrl: "/logos/FOTO-PASTORES-DO-CAMPO-AD-CATALÃO.jpg",
+    photoUrl: "/images/PASTORES.png",
     quote:
       "Essa casa de oração será um local onde vidas serão abençoadas e alcançadas pelo poder de Deus.",
     historyText: [
