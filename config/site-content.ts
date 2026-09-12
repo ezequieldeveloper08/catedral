@@ -256,7 +256,7 @@ export const siteContent = {
   leadership: {
     title: "Palavra Pastoral",
     subtitle: "Um legado de fé que transforma gerações em Catalão e no mundo.",
-    pastorNames: "Pastores Presidentes do Campo de Catalão",
+    pastorNames: "Pr. Cornélio Neto e Pra Camilla Lacerda",
     role: "Presidência • AD Catalão Ministério Madureira",
     photoUrl: "/images/PASTORES.png",
     quote:
@@ -282,7 +282,7 @@ export const siteContent = {
       {
         day: "Terça-feira",
         time: "19h30",
-        name: "Culto de Ensino & Doutrina",
+        name: "Culto de Ensino",
         description: "Ministração da Palavra de Deus para edificação espiritual da igreja e fortalecimento de toda a família.",
         category: "ensino",
       },
