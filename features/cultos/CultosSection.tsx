@@ -121,7 +121,7 @@ export function CultosSection() {
         </div>
 
         {/* INSTAGRAM FEED GRID SECTION */}
-        <div className="space-y-6 pt-6">
+        {/* <div className="space-y-6 pt-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
             <div>
               <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#E8651A] block mb-1">
@@ -143,7 +143,6 @@ export function CultosSection() {
             </a>
           </div>
 
-          {/* 3-COLUMN INSTAGRAM SQUARE GRID */}
           <div className="grid grid-cols-3 gap-1.5 sm:gap-3 md:gap-4">
             {cultos.photos.map((photo, index) => (
               <div
@@ -159,7 +158,6 @@ export function CultosSection() {
                   className="object-cover transition-transform duration-500 group-hover:scale-108"
                 />
 
-                {/* INSTAGRAM HOVER OVERLAY */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-3 text-center gap-2 select-none">
                   <div className="flex items-center gap-1.5 text-white">
                     <Heart className="size-4 sm:size-5 fill-white text-white animate-pulse" />
@@ -170,14 +168,13 @@ export function CultosSection() {
                   </span>
                 </div>
 
-                {/* Mobile subtle icon indicator */}
                 <div className="absolute top-1.5 right-1.5 p-1 bg-black/40 backdrop-blur-xs rounded-[2px] sm:hidden opacity-70">
                   <Maximize2 className="size-2.5 text-white" />
                 </div>
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* ── INSTAGRAM LIGHTBOX EXPAND MODAL ── */}

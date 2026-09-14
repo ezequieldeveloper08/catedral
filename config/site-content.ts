@@ -314,6 +314,8 @@ export const siteContent = {
   volunteer: {
     title: "Seja um Voluntário — Mãos na Obra",
     subtitle: "Coloque seus dons, habilidades e coração a serviço da construção do Templo de Deus.",
+    whatsapp: "556499865775",
+    whatsappDisplay: "(64) 9986-5775",
     description:
       "Preencha seus dados abaixo. Ao clicar em enviar, você será direcionado diretamente ao WhatsApp oficial da nossa equipe com uma mensagem pré-formatada para combinarmos sua participação!",
     areas: [

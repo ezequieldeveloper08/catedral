@@ -29,7 +29,8 @@ export function VolunteerSection() {
       area
     )}%0A*Mensagem:* ${encodeURIComponent(message || "Gostaria de servir na construção e ministérios da Nova Catedral!")}`
 
-    const whatsappUrl = `https://wa.me/${church.contact.whatsapp}?text=${text}`
+    const targetWhatsapp = volunteer.whatsapp || church.contact.whatsapp
+    const whatsappUrl = `https://wa.me/${targetWhatsapp}?text=${text}`
     window.open(whatsappUrl, "_blank")
     toast.success("Formulário gerado!", {
       description: "Você foi redirecionado para o WhatsApp da equipe pastoral.",
