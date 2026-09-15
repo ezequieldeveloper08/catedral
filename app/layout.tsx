@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next"
 import { Poppins } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -135,6 +136,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-[#17150F] text-[#EAE5DC] font-sans antialiased overflow-x-hidden">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <Analytics />
           {children}
           <Toaster position="bottom-right" richColors />
         </ThemeProvider>
