@@ -251,6 +251,17 @@ export const siteContent = {
       favored: "Igreja Evangélica Assembleia de Deus - Ministério de Madureira - Catalão GO",
       cnpj: "01.326.651/0001-39",
     },
+    creditCard: {
+      platform: "Unicred Pay",
+      description: "Escolha o valor da contribuição para pagar com cartão de crédito no ambiente seguro da Unicred:",
+      options: [
+        { label: "R$ 500,00", value: "500", url: "https://pay.unicred.com.br/p/61548faabfdc401486a31c8af37046d3" },
+        { label: "R$ 1.000,00", value: "1000", url: "https://pay.unicred.com.br/p/c56f050ef1ca4032a0de445d35a39e9e" },
+        { label: "R$ 2.000,00", value: "2000", url: "https://pay.unicred.com.br/p/0c5da0daa49b4d9186a6fa5336695c29" },
+        { label: "R$ 5.000,00", value: "5000", url: "https://pay.unicred.com.br/p/0bf225d1d55b40ab90ba30866d13a225" },
+        { label: "R$ 10.000,00", value: "10000", url: "https://pay.unicred.com.br/p/370722c3fdf94ee8b8a56004c6bf798c" },
+      ],
+    },
   },
 
   leadership: {

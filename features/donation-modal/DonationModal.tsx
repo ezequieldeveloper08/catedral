@@ -81,17 +81,24 @@ Favorecido: ${donations.bankTransfer.favored}`
           </DialogHeader>
 
           <Tabs defaultValue="pix" className="mt-4 w-full">
-            <TabsList className="grid grid-cols-2 bg-[#13110C] border border-white/10 p-1 w-full rounded-[6px] gap-1">
+            <TabsList className="grid grid-cols-3 bg-[#13110C] border border-white/10 p-1 w-full rounded-[6px] gap-1">
               <TabsTrigger
                 value="pix"
-                className="flex items-center justify-center gap-2 text-xs sm:text-sm font-medium py-2.5 rounded-[4px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer whitespace-nowrap"
+                className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-medium py-2.5 rounded-[4px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer whitespace-nowrap"
               >
                 <QrCode className="size-4 shrink-0 text-current" />
                 <span>Pix</span>
               </TabsTrigger>
               <TabsTrigger
+                value="cartao"
+                className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-medium py-2.5 rounded-[4px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer whitespace-nowrap"
+              >
+                <CreditCard className="size-4 shrink-0 text-current" />
+                <span>Cartão</span>
+              </TabsTrigger>
+              <TabsTrigger
                 value="banco"
-                className="flex items-center justify-center gap-2 text-xs sm:text-sm font-medium py-2.5 rounded-[4px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer whitespace-nowrap"
+                className="flex items-center justify-center gap-1.5 text-xs sm:text-sm font-medium py-2.5 rounded-[4px] transition-all data-[active]:bg-[#E8651A] data-[active]:text-white data-[state=active]:bg-[#E8651A] data-[state=active]:text-white data-[active]:font-semibold data-[state=active]:font-semibold shadow-sm cursor-pointer whitespace-nowrap text-ellipsis overflow-hidden"
               >
                 <Landmark className="size-4 shrink-0 text-current" />
                 <span>TED / Transferência</span>
@@ -143,6 +150,48 @@ Favorecido: ${donations.bankTransfer.favored}`
                 {copiedKey ? <Check className="size-4" /> : <Copy className="size-4" />}
                 {copiedKey ? "Chave Pix Copiada!" : "Copiar Chave Pix"}
               </button>
+            </TabsContent>
+
+            {/* TAB CARTÃO DE CRÉDITO */}
+            <TabsContent value="cartao" className="space-y-4 pt-4">
+              <div className="bg-[#1c1913] border border-white/10 p-4 sm:p-5 rounded-[6px] space-y-3.5">
+                <div className="flex items-center justify-between gap-2 pb-2.5 border-b border-white/10">
+                  <div className="flex items-center gap-2 text-xs sm:text-sm text-[#F3EFE6]">
+                    <CreditCard className="size-4 text-[#E8651A] shrink-0" />
+                    <span className="font-medium">Cartão de Crédito</span>
+                  </div>
+                  <span className="text-[10px] sm:text-[11px] text-[#E8651A] font-mono uppercase shrink-0 bg-[#E8651A]/10 px-2 py-0.5 rounded border border-[#E8651A]/30">
+                    {donations.creditCard.platform}
+                  </span>
+                </div>
+
+                <p className="text-xs text-[#EAE5DC]/80 leading-relaxed">
+                  {donations.creditCard.description}
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                  {donations.creditCard.options.map((option) => (
+                    <a
+                      key={option.value}
+                      href={option.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group bg-[#13110C] hover:bg-[#E8651A]/10 border border-white/10 hover:border-[#E8651A]/50 p-3 rounded-[6px] transition-all flex items-center justify-between cursor-pointer"
+                    >
+                      <div className="flex flex-col">
+                        <span className="text-[10px] uppercase font-semibold text-[#E8651A]">Contribuição</span>
+                        <span className="text-sm font-bold text-[#F3EFE6] group-hover:text-white transition-colors">
+                          {option.label}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1 text-xs text-[#EAE5DC]/60 group-hover:text-[#E8651A] transition-colors font-medium">
+                        <span>Pagar</span>
+                        <ExternalLink className="size-3.5 shrink-0" />
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </TabsContent>
 
             {/* TAB TRANSFERÊNCIA */}
